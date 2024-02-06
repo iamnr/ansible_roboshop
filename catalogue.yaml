@@ -23,6 +23,7 @@
     ansible.builtin.stat:
       path: /app
       register: directory
+      ignore_errors: true
 
   - name: Printing
     ansible.builtin.debug:
