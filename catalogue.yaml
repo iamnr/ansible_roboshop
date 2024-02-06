@@ -20,6 +20,6 @@
       name: roboshop
 
   - name: Setup an app directory
-    ansible.builtin.file:
+    ansible.builtin.stat:
       path: /app
       register: directory
