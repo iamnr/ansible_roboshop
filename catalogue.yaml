@@ -38,4 +38,4 @@
 
   - name: Download the application code to created app directory.
     ansible.builtin.shell: "curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip"
-    path: /app
+      path: /app
