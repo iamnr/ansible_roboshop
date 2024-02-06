@@ -19,7 +19,11 @@
     ansible.builtin.user:
       name: roboshop
 
-  - name: Setup an app directory
+  - name: Check if a directory is exist or not
     ansible.builtin.stat:
       path: /app
       register: directory
+
+  - name: Printing
+    ansible.builtin.debug:
+      msg: "{{directory}}"
