@@ -10,7 +10,8 @@
       name: nodejs 
       state: installed
   - name: Checking if the roboshop user is existed or not
-    ansible.builtin.command: id roboshop
+    ansible.builtin.command: 
+      id roboshop
     register: out
     ignore_errors: true
 
@@ -22,8 +23,8 @@
   - name: Check if a directory is exist or not
     ansible.builtin.stat:
       path: /app
-      register: directory
-      ignore_errors: true
+    register: directory
+    ignore_errors: true
 
   - name: Printing
     ansible.builtin.debug:
