@@ -29,13 +29,4 @@
       name: mongod
       state: restarted
 
-  - name: Load Schema
-    ansible.builtin.command: mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js
-
-  - name: restart catalogue
-    ansible.builtin.service:
-      name: catalogue
-      state: restarted
-      enabled: true
-
       
