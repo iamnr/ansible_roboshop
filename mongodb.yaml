@@ -12,7 +12,7 @@
       name: mongodb-org
       state: installed
    
-  - name: Enabling MongoDB
+  - name: Start and Enable MongoDB
     ansible.builtin.service:
       name: mongodb-org
       state: started
