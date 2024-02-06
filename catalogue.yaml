@@ -53,3 +53,12 @@
       npm install
     args:
       chdir: /app
+
+  - name: Copying catalogue.service
+    ansible.builtin.copy:
+      src: catalogue.service
+      dest: /etc/systemd/system/catalogue.service
+
+  - name: system demon reload
+    ansible.builtin.systemd:
+      daemon_reload: true
