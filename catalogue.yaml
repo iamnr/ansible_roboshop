@@ -29,3 +29,9 @@
   - name: Printing
     ansible.builtin.debug:
       msg: "{{directory}}"
+
+  - name: Creating /app directory
+    when: register.stat.exists == flase
+    ansible.builtin.file:
+      path: /app
+      state: directory  
