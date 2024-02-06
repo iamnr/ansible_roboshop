@@ -62,3 +62,13 @@
   - name: system demon reload
     ansible.builtin.systemd:
       daemon_reload: true
+
+  - name: Copying mongo.repo
+    ansible.builtin.copy:
+      src: mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo
+
+  - name: installing MongoDB
+    ansible.builtin.yum:
+      name: mongodb-org-shell
+      
