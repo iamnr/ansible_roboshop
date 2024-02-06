@@ -37,5 +37,6 @@
       state: directory  
 
   - name: Download the application code to created app directory.
-    ansible.builtin.shell: "curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip"
-      path: /app
+    ansible.builtin.get_url: 
+       url: https://roboshop-builds.s3.amazonaws.com/catalogue.zip
+       dest: /tmp
