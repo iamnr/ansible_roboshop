@@ -1,0 +1,19 @@
+- name: Installing MongoDB component
+  hosts: mongodb
+  become: yes
+  tasks:
+  - name: Install MongoDB
+    ansible.builtin.yum:
+      name: mongodb-ord
+      state: installed
+   
+  - name: Enabling MongoDB
+    ansible.builtin.service:
+      name: mongodb-ord
+      enabled: yes
+    
+  - name: Starting MongoDB
+    ansible.builtin.service:
+      name: mongodb-org
+      state: started
+
