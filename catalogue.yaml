@@ -9,6 +9,7 @@
     ansible.builtin.yum:
       name: nodejs 
       state: installed
+
   - name: Checking if the roboshop user is existed or not
     ansible.builtin.command: 
       id roboshop
@@ -46,3 +47,9 @@
       src: /tmp/catalogue.zip
       dest: /app
       remote_src: yes
+
+  - name: Running NPM Install
+    ansible.builtin.command:
+      npm install
+    args:
+      chdir: /app
