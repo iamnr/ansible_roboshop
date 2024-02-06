@@ -18,3 +18,8 @@
     when: out.rc !=0
     ansible.builtin.user:
       name: roboshop
+
+  - name: Setup an app directory
+    ansible.builtin.file:
+      path: /app
+      register: directory
