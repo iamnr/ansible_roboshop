@@ -9,7 +9,7 @@
     ansible.builtin.yum:
       name: nodejs 
       state: installed
-  - name: Creating roboshop username
-    ansible.builtin.shell: "id username"
+  - name: Checking if the roboshop user is existed or not
+    ansible.builtin.command: id username
     register: out
     ignore_errors: true
