@@ -10,7 +10,7 @@
       name: nodejs 
       state: installed
   - name: Checking if the roboshop user is existed or not
-    ansible.builtin.command: id username
+    ansible.builtin.command: id roboshop
     register: out
     ignore_errors: true
 
